@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Parthka';
+    src: url('PPNeueMachina-InktrapLight.woff') format('woff2'),
+        url('PPNeueMachina-InktrapLight.woff') format('woff');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Parthka';
+    src: url('PPNeueMachina-InktrapLightItalic.woff2') format('woff2'),
+        url('PPNeueMachina-InktrapLightItalic.woff') format('woff');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Parthka';
+    src: url('PPNeueMachina-InktrapRegular.woff2') format('woff2'),
+        url('PPNeueMachina-InktrapRegular.woff') format('woff');
+    font-weight: 500;
+}
