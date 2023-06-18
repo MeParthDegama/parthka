@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: 'Lunema';
 }
 
 .mainbg {
@@ -15,11 +17,36 @@
     z-index: 699;
 }
 
+.top-cover {
+    z-index: 10000;
+    position: absolute;
+    background: #0f0f0f;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+
+    animation-delay: 2s;
+    animation-name: topCover;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0, 1.24, 0.88, 1.22);
+    animation-fill-mode: forwards;
+}
+
+@keyframes topCover {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 0vh;
+    }
+}
+
 .title-page {
 
     font-size: 1.1rem;
 
-    padding: 0 2rem;
+    padding: 0 5vw;
 
     position: relative;
     z-index: 700;
@@ -70,11 +97,20 @@
     .main-title {
 
         .title {
+            line-height: 1.1;
             color: #fff;
-            font-size: 5rem;
+            font-size: 8.4vw;
 
             .line {
                 display: block;
+            }
+
+            .down-to-up {
+                .word {
+                    .word-text {
+                        animation-delay: 2s;
+                    }
+                }
             }
 
         }
@@ -106,19 +142,17 @@
             animation-name: example;
             animation-duration: .75s;
             animation-timing-function: ease-out;
+            transform: translate(0px, 20%) rotateX(45deg);
+            animation-fill-mode: forwards;
         }
     }
 
-    .word-br{
+    .word-br {
         display: block;
         width: 100%;
     }
 
     @keyframes example {
-        from {
-            transform: translate(0px, 20%) rotateX(45deg);
-        }
-
         to {
             transform: translate(0px, 0%) rotateX(0deg);
         }
