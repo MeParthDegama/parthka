@@ -26,10 +26,15 @@
     width: 100%;
 
     animation-delay: 2s;
-    animation-name: topCover;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0, 1.24, 0.88, 1.22);
     animation-fill-mode: forwards;
+    animation-name: topCover;
+
+    @media screen and (max-width: 750px) {
+        animation-name: topCover2;
+    }
+
 }
 
 @keyframes topCover {
@@ -39,6 +44,16 @@
 
     to {
         height: 0vh;
+    }
+}
+
+@keyframes topCover2 {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
     }
 }
 
@@ -83,13 +98,15 @@
 
         .navbtn {
 
-
             div {
                 width: 30px;
                 height: 2px;
                 background: #fff;
-                margin: 10px;
+                margin: 10px 0;
             }
+
+            margin-right: 0;
+            
         }
 
     }
@@ -113,6 +130,8 @@
                 }
             }
 
+            @media screen and (max-width: 750px) {}
+
         }
 
         .hr-line {
@@ -120,6 +139,35 @@
             background: #fff;
             margin: 2rem 0;
         }
+
+        @media screen and (max-width: 750px) {
+
+            padding: 2rem 0;
+
+            margin-top: auto;
+            transform: rotateZ(90 + 90deg);
+            writing-mode: vertical-rl;
+            margin-left: auto;
+
+            .title {
+                font-size: 8vh !important;
+            }
+
+            .word-br {
+                height: 100%;
+            }
+
+            .hr-line {
+                height: 100%;
+                width: 1px;
+                margin: 0;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        justify-content: unset;
     }
 
 }
