@@ -6,8 +6,12 @@
     font-family: 'Lunema';
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .mainbg {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url("/public/mainbg.jpg");
     background-position: center;
@@ -59,6 +63,8 @@
 
 .title-page {
 
+    overflow-X: hidden;
+
     font-size: 1.1rem;
 
     padding: 0 5vw;
@@ -67,12 +73,12 @@
     z-index: 700;
 
     height: 100vh;
+    width: 100%;
 
     font-family: ubuntu;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     .header {
 
@@ -97,26 +103,78 @@
         }
 
         .navbtn {
+            position: relative;
+            height: 50px;
+            width: 30px;
 
             div {
                 width: 30px;
                 height: 2px;
                 background: #fff;
-                margin: 10px 0;
+                transition: .4s;
+                position: absolute;
+                display: block;
+                margin: auto;
+
+                &:nth-child(1) {
+                    top: 35%;
+                }
+
+
+                &:nth-child(2) {
+                    top: 65%;
+                    transform: translateY(-100%);
+                }
+            }
+
+            &.active {
+
+                div {
+                    &:nth-child(1) {
+                        top: 50%;
+                        transform: rotateZ(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        top: 50%;
+                        transform: rotateZ(-45deg);
+                    }
+                }
             }
 
             margin-right: 0;
-            
+
+        }
+
+        transform: translateY(200%);
+        opacity: 0;
+        animation-name: headerAni;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 2.4s;
+        animation-timing-function: ease-out;
+
+        @media screen and (max-width: 750px) {
+            transform: translateX(50%);
+        }
+
+        @keyframes headerAni {
+            to {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
         }
 
     }
 
     .main-title {
 
+        margin-top: auto;
+
         .title {
             line-height: 1.1;
             color: #fff;
-            font-size: 8.4vw;
+            font-size: 9.6vw;
 
             .line {
                 display: block;
@@ -130,19 +188,15 @@
                 }
             }
 
-            @media screen and (max-width: 750px) {}
-
         }
 
         .hr-line {
             height: 1px;
             background: #fff;
-            margin: 2rem 0;
+            margin: .5rem 0;
         }
 
         @media screen and (max-width: 750px) {
-
-            padding: 2rem 0;
 
             margin-top: auto;
             transform: rotateZ(90 + 90deg);
@@ -150,7 +204,8 @@
             margin-left: auto;
 
             .title {
-                font-size: 8vh !important;
+                font-size: 7vh !important;
+                padding: 2rem 0;
             }
 
             .word-br {
@@ -162,6 +217,46 @@
                 width: 1px;
                 margin: 0;
                 margin-right: 1rem;
+            }
+        }
+    }
+
+    .hr-line-main {
+        height: 1px;
+        background: #fff;
+        margin: 0;
+        margin-bottom: .5rem;
+        display: none;
+
+        @media screen and (max-width: 750px) {
+            display: unset;
+        }
+    }
+
+    .sec-title {
+        color: #fff;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+
+        .mail {
+            text-decoration: underline;
+        }
+
+        .scroll {
+            font-style: italic;
+            opacity: .5;
+        }
+
+        .down-to-up {
+            .word {
+                .word-text {
+                    animation-delay: 1.9s;
+                }
             }
         }
     }
@@ -187,11 +282,25 @@
         .word-text {
             display: block;
             height: 200%;
-            animation-name: example;
+            transform: translate(0px, 20%) rotateX(45deg);
+            animation-name: downToUp;
             animation-duration: .75s;
             animation-timing-function: ease-out;
-            transform: translate(0px, 20%) rotateX(45deg);
             animation-fill-mode: forwards;
+        }
+
+    }
+
+    &.down-to-up-alt {
+        .word {
+            .word-text {
+                @media screen and (max-width: 750px) {
+                    width: 200%;
+                    height: 100%;
+                    transform: translate(-20%, 0%) rotateY(45deg);
+                    animation-name: downToUp2;
+                }
+            }
         }
     }
 
@@ -200,10 +309,22 @@
         width: 100%;
     }
 
-    @keyframes example {
+    @keyframes downToUp {
         to {
             transform: translate(0px, 0%) rotateX(0deg);
         }
     }
 
+    @keyframes downToUp2 {
+        to {
+            transform: translate(0px, 0%) rotateY(0deg);
+        }
+    }
+
+}
+
+.no-md {
+    @media screen and (max-width: 750px) {
+        display: none !important;
+    }
 }

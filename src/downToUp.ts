@@ -12,7 +12,7 @@ function downToUp() {
 
         line.innerText = ""
 
-        lineWord.map((e) => {
+        lineWord.map((e, i) => {
 
             if (e === ".br") {
                 let wordElementBox = document.createElement("span")
@@ -29,7 +29,7 @@ function downToUp() {
             let wordElement = document.createElement("span")
             wordElement.classList.add("word-text")
 
-            wordElement.innerText = e + String.fromCharCode(160)
+            wordElement.innerText = e + (i !== lineWord.length - 1 ? String.fromCharCode(160) : "")
 
             wordElementBox.append(wordElement)
 

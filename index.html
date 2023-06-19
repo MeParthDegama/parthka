@@ -6,11 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + TS</title>
+  <script>history.scrollRestoration = "manual"</script>
 </head>
 
 <body>
 
-  <div class="app">
+  <div class="app" id="abc">
     <div class="mainbg"></div>
     <div class="top-cover"></div>
 
@@ -18,13 +19,12 @@
 
       <div class="header">
         <div class="header-title">
-          <span class="bold">Parthka</span> • Software Engineer
+          <span class="bold">Parthka</span> <span class="no-md">• Software Engineer</span>
         </div>
         <div class="header-link">
           <a href="projects">Projects</a>
           <a href="contact">Contact</a>
-          <div class="navbtn">
-            <div></div>
+          <div class="navbtn" id="navbtn">
             <div></div>
             <div></div>
           </div>
@@ -32,16 +32,24 @@
       </div>
 
       <div class="main-title">
-
         <div class="title">
-          <snap class="line down-to-up">
+          <snap class="line down-to-up down-to-up-alt">
             Hi, I'm Parthka
             .br
             a Software Engineer
           </snap>
         </div>
         <div class="hr-line"></div>
+      </div>
 
+      <div class="hr-line-main"></div>
+      <div class="sec-title">
+        <span class="mail down-to-up">
+          contact@parthka.com
+        </span>
+        <div class="scroll down-to-up no-md">
+          *scroll for more about me
+        </div>
       </div>
 
     </div>
