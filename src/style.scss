@@ -43,6 +43,8 @@ body {
   word-spacing: 1px;
   letter-spacing: 1px;
 
+  font-size: 1rem;
+
   @media screen and (max-width: 1200px) {
     margin: 0 10vw;
   }
@@ -235,12 +237,12 @@ body {
     .shell {
       font-family: 'Fira Code', monospace;
       font-size: 1rem;
-      border:  1px solid #ffffff1a;
+      border: 1px solid #ffffff1a;
       border-radius: 4px;
       padding: 10px 20px;
       width: 100%;
 
-      &::before{
+      &::before {
         content: '$ ';
       }
     }
@@ -318,6 +320,17 @@ body {
   color: #ffffff;
   text-decoration: none;
   transition: .2s;
+
+  &.link-image {
+    display: inline-block;
+
+    &:hover {
+      img {
+        filter: drop-shadow($text-shadow);
+      }
+    }
+
+  }
 
   &:hover {
     color: $main-color;
